@@ -18,7 +18,7 @@ on:
 
 jobs:
   build:
-    runs-on: ubuntu-18.04
+    runs-on: ubuntu-latest
 
     steps:
       - uses: actions/checkout@v1
@@ -30,6 +30,14 @@ jobs:
         uses: actions/setup-java@v1
         with:
           java-version: 1.8
+          
+      - name: Setup Android tools
+        run: |
+          wget -O android-sdk.zip https://dl.google.com/android/repository/commandlinetools-linux-6858069_latest.zip
+          unzip android-sdk.zip -d ${ANDROID_SDK_ROOT}
+          rm -f android-sdk.zip
+          
+      - run: $ANDROID_SDK_ROOT/tools/bin/lint --version
 
       - name: Create empty truststore file
         run: |
