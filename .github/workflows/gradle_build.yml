@@ -42,6 +42,7 @@ jobs:
           # Use a personal read token to install the Cyface Utils package
           echo "github.user=vsafonkin" > local.properties
           echo "github.token=${{ secrets.GITHUB_TOKEN }}" >> local.properties
+      - run: cat local.properties
       - run: ./gradlew lint    
       - name: Build with Gradle
         run: ./gradlew build
