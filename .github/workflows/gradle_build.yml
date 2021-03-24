@@ -31,7 +31,7 @@ jobs:
         with:
           java-version: 1.8
           
-      - run: $ANDROID_SDK_ROOT/tools/bin/lint /home/runner/work/android-backend/android-backend/persistence/src
+      - run: $ANDROID_SDK_ROOT/tools/bin/lint .
 
       - name: Create empty truststore file
         run: |
