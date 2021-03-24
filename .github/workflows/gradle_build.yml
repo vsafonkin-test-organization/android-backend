@@ -31,7 +31,7 @@ jobs:
         with:
           java-version: 1.8
           
-      - run: $ANDROID_SDK_ROOT/tools/bin/lint --sources ./datacapturing
+      - run: $ANDROID_SDK_ROOT/tools/bin/lint --sources /home/runner/work/android-backend/android-backend/persistence/src/main/java/de/cyface/persistence/serialization/EventsFileSerializer.java
 
       - name: Create empty truststore file
         run: |
